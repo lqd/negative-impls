@@ -1,3 +1,5 @@
+#![feature(negative_impls)]
+
 use fake_libcore::Future;
 
 trait Termination {}
