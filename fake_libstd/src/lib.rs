@@ -5,9 +5,5 @@ use fake_libcore::Future;
 trait Termination {}
 
 impl<E> Termination for Option<E> {}
-impl Termination for () {}
 
-impl<F> Termination for F
-where
-    F: Future
-    {}
+impl<F> Termination for F where F: Future {}
