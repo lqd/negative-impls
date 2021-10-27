@@ -4,10 +4,10 @@ use fake_libcore::Future;
 
 trait Termination {}
 
-impl<E> Termination for Result<(), E> {}
+impl<E> Termination for Option<E> {}
 impl Termination for () {}
 
-impl<T, F> Termination for F
+impl<F> Termination for F
 where
-    T: Termination,
-    F: Future<Output = T> {}
+    F: Future
+    {}
